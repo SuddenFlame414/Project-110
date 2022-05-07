@@ -6,7 +6,7 @@ import pandas as pd
 import csv
 
 df = pd.read_csv("medium_data.csv")
-data = df["average"].tolist()
+data = df["reading_time"].tolist()
 
 def random_set_of_mean(counter):
     dataset = []
@@ -21,7 +21,7 @@ def random_set_of_mean(counter):
 def show_fig(mean_list):
     df = mean_list
     mean = statistics.mean(df)
-    fig = ff.create_distplot([df], ["average"], show_hist = True)
+    fig = ff.create_distplot([df], ["reading_time"], show_hist = True)
     fig.add_trace(go.Scatter(x =[mean, mean], y = [0,1], mode = "lines", name = "MEAN"))
     fig.show()
 
